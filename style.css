@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&family=Nunito+Sans:opsz,wght@6..12,200;6..12,300;6..12,400&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto+Slab:wght@100;300;400;500;600;700&family=Roboto:wght@100;300;400;500;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-image: url("./image1.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container {}
+
+nav {
+    width: 100%;
+    height: 80px;
+    background-color: transparent;
+}
+
+nav .navbar-brand {
+    font-size: 30px;
+    margin: 0 auto;
+    color: white;
+}
+
+nav .navbar-brand:hover {
+    font-size: 30px;
+    margin: 0 auto;
+    color: rgb(189, 0, 0);
+}
+
+.watch {
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    border: 1px solid blue;
+}
+
+.watch .outer-watch {
+    margin-top: 50px;
+    border: 1px solid blue;
+    width: 40%;
+    height: 80%;
+    border-radius: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(63, 63, 63);
+}
+
+.watch .inner-watch {
+    /* margin: 25px 25px; */
+    width: 90%;
+    height: 80%;
+    border: 1px solid blue;
+    background-color: rgb(25, 2, 2);
+    border-radius: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text {
+    /* margin-top: 80px; */
+    width: 100%;
+    padding-left: 5%;
+    /* display: flex;
+    text-align: center;
+    justify-content: center; */
+    border: 1px solid rgb(255, 112, 112);
+    /* font-size: 35px; */
+}
+
+.hour {
+    font-size: 95px;
+    color: rgb(255, 242, 4);
+}
+
+.minute {
+    font-size: 75px;
+    color: rgb(255, 166, 49);
+}
+
+.sec {
+    font-size: 60px;
+    color: rgb(255, 65, 22);
+}
+
+.mili-sec {
+    font-size: 40px;
+    font-weight: 500;
+    color: rgb(240, 22, 22);
+}
+
+.button-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.mybtn {
+    font-weight: 500;
+    text-transform: uppercase;
+    width: 100px;
+    margin: 0 50px;
+    padding: 10px;
+    border: none;
+    background-color: black;
+    color: white;
+    border-radius: 50px;
+}
+
+.laps {
+    margin: 20px 0;
+    border: 1px solid orange;
+    list-style: none;
+    padding: 1px 0;
+    overflow-x: auto;
+    /* overflow: auto; */
+    /* width: 100%; */
+    /* height: 250px; */
+    /* position: relative; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    /* white-space: nowrap; */
+}
+
+.lap-item {
+    /* flex: 1; */
+    min-width: 350px;
+    /* width: 400px; */
+    height: 50px;
+    padding: 10px;
+    border: 1px solid rgb(255, 255, 0);
+    text-align: center;
+    border-radius: 50px;
+    margin: 5px 10px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.number {
+    color: rgb(243, 234, 234);
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.timestamp {
+    /* display: flex; */
+    text-align: center;
+    margin-left: 25px;
+    color: white;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.btn {
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    align-content: center;
+    background-color: blue;
+}
+
+@media screen and (max-width: 400px) {
+
+    .watch .outer-watch {
+        height: 50%;
+        width: 80%;
+        background-color: pink;
+    }
+
+    .watch .inner-watch {
+        width: 75%;
+        height: 45%;
+    }
+}
