@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch</title>
+</head>
+
+<body>
+    <h1>Stopwatch</h1>
+    <div id="stopwatch">00:00:00.00</div>
+    <button id="startStop">Start</button>
+    <button id="reset">Reset</button>
+    <button id="lap">Lap</button>
+    <ul id="lapList"></ul>
+
+    <script>
+        let startTime = 0;
+        let interval;
+        let isRunning = false;
+        const lapList = document.getElementById("lapList");
+
+        const formatTime = (time) => {
+            const pad = (n) => (n < 10 ? `0${n}` : n);
+            const minutes = pad(Math.floor(time / 60000));
+            const seconds = pad(Math.floor((time % 60000) / 1000));
+            const milliseconds = pad(Math.floor((time % 1000) / 10));
+            return `${minutes}:${seconds}:${milliseconds}`;
+        };
+
+        const updateStopwatch = () => {
+            const currentTime = Date.now() - startTime;
+            document.getElementById("stopwatch").textContent = formatTime(currentTime);
+        };
+
+        const toggleStartStop = () => {
+            if (isRunning) {
+                clearInterval(interval);
+                document.getElementById("startStop").textContent = "Start";
+                isRunning = false;
+            } else {
+                startTime = Date.now() - (startTime ? startTime : 0);
+                interval = setInterval(updateStopwatch, 10);
+                document.getElementById("startStop").textContent = "Pause";
+                isRunning = true;
+            }
+        };
+
+        document.getElementById("startStop").addEventListener("click", toggleStartStop);
+
+        document.getElementById("reset").addEventListener("click", () => {
+            clearInterval(interval);
+            document.getElementById("startStop").textContent = "Start";
+            document.getElementById("stopwatch").textContent = "00:00:00.00";
+            lapList.innerHTML = "";
+            isRunning = false;
+            startTime = 0;
+        });
+
+        document.getElementById("lap").addEventListener("click", () => {
+            if (isRunning) {
+                const lapTime = Date.now() - startTime;
+                const lapItem = document.createElement("li");
+                lapItem.textContent = `Lap ${lapList.childElementCount + 1}: ${formatTime(lapTime)}`;
+                lapList.appendChild(lapItem);
+            }
+        });
+    </script>
+</body>
+
+</html>

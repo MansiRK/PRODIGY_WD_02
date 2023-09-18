@@ -8,7 +8,6 @@
 body {
     width: 100%;
     height: 100vh;
-    overflow: hidden;
     background-image: url("./image1.jpg");
     background-position: center center;
     background-repeat: no-repeat;
@@ -24,15 +23,16 @@ nav {
 }
 
 nav .navbar-brand {
-    font-size: 30px;
+    font-size: 55px;
     margin: 0 auto;
-    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(228, 218, 218);
+    text-shadow: 2px 2px #7efeaf;
 }
 
 nav .navbar-brand:hover {
-    font-size: 30px;
     margin: 0 auto;
-    color: rgb(189, 0, 0);
+    color: rgb(133, 161, 255);
 }
 
 .watch {
@@ -42,109 +42,101 @@ nav .navbar-brand:hover {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    border: 1px solid blue;
-}
 
-.watch .outer-watch {
-    margin-top: 50px;
-    border: 1px solid blue;
-    width: 40%;
-    height: 80%;
-    border-radius: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgb(63, 63, 63);
 }
 
 .watch .inner-watch {
-    /* margin: 25px 25px; */
-    width: 90%;
+
+    margin-top: 50px;
+    width: 50%;
     height: 80%;
-    border: 1px solid blue;
-    background-color: rgb(25, 2, 2);
-    border-radius: 150px;
+    box-shadow: 1px 10px 10px 10px rgb(178, 99, 247);
+    background-color: transparent;
+    border-radius: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .text {
-    /* margin-top: 80px; */
     width: 100%;
-    padding-left: 5%;
-    /* display: flex;
-    text-align: center;
-    justify-content: center; */
-    border: 1px solid rgb(255, 112, 112);
-    /* font-size: 35px; */
-}
-
-.hour {
-    font-size: 95px;
-    color: rgb(255, 242, 4);
+    margin: 0 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .minute {
-    font-size: 75px;
-    color: rgb(255, 166, 49);
+    font-size: 65px;
+    font-weight: 700;
+    color: rgb(106, 236, 236);
+    text-shadow: 2px 2px 5px red;
+
 }
 
 .sec {
-    font-size: 60px;
-    color: rgb(255, 65, 22);
+    font-weight: 700;
+    margin-left: 10px;
+    font-size: 50px;
+    color: rgb(30, 112, 225);
+    text-shadow: 2px 2px 5px red;
 }
 
-.mili-sec {
-    font-size: 40px;
-    font-weight: 500;
-    color: rgb(240, 22, 22);
+.milli-sec {
+    font-weight: 700;
+    margin-left: 10px;
+    font-size: 35px;
+    color: rgb(208, 30, 227);
+    text-shadow: 2px 2px 5px red;
 }
 
 .button-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid black;
     width: 100%;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 .mybtn {
-    font-weight: 500;
+    font-size: 20px;
+    font-weight: 700;
     text-transform: uppercase;
+    letter-spacing: 1.5px;
     margin: 0 20px;
-    padding: 10px 25px;
-    border: none;
-    background-color: black;
-    color: white;
+    padding: 10px 30px;
+    border: 1px solid rgb(188, 182, 182);
+    background-color: transparent;
+    color: rgb(253, 253, 253);
     border-radius: 50px;
+}
+
+.mybtn:hover {
+    border: 1px solid white;
+    background-color: rgb(222, 217, 217);
+    color: rgb(79, 4, 86);
 }
 
 .laps {
     margin: 20px 0;
-    border: 1px solid orange;
     list-style: none;
     padding: 1px 0;
     overflow-x: auto;
-    /* overflow: auto; */
     /* width: 100%; */
-    /* height: 250px; */
-    /* position: relative; */
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
-    /* white-space: nowrap; */
+    justify-content: flex-start;
+}
+
+.laps::-webkit-scrollbar {
+    display: none;
 }
 
 .lap-item {
-    /* flex: 1; */
     min-width: 350px;
-    /* width: 400px; */
-    height: 50px;
     padding: 10px;
-    border: 1px solid rgb(255, 255, 0);
+    border: 1px solid rgb(221, 173, 249);
     text-align: center;
     border-radius: 50px;
     margin: 5px 10px;
@@ -152,14 +144,14 @@ nav .navbar-brand:hover {
     vertical-align: top;
 }
 
+
 .number {
-    color: rgb(243, 234, 234);
+    color: rgb(251, 251, 251);
     font-size: 20px;
     font-weight: 500;
 }
 
 .timestamp {
-    /* display: flex; */
     text-align: center;
     margin-left: 25px;
     color: white;
@@ -167,25 +159,96 @@ nav .navbar-brand:hover {
     font-size: 20px;
 }
 
+.lap-item:hover {
+    border: purple;
+}
+
+.number .timestamp:hover {
+    color: rgb(67, 4, 67);
+}
+
 .hidden {
     visibility: hidden;
 }
 
-@media screen and (max-width: 400px) {
 
-    .watch .outer-watch {
-        height: 50%;
-        width: 80%;
-        background-color: pink;
-    }
+@media (min-width: 435px) and (max-width: 770px) {
 
     .watch .inner-watch {
-        width: 75%;
-        height: 45%;
+        margin-top: 30%;
+        width: 80%;
+        height: 40%;
+    }
+
+    .button-wrapper {
+        margin-top: 20%;
+    }
+
+    .minute {
+        font-size: 50px;
+        /* color: rgb(8, 67, 24); */
+    }
+
+    .sec {
+        font-size: 32px;
+    }
+
+    .milli-sec {
+        font-size: 20px;
+    }
+
+    .mybtn {
+        font-size: 15px;
+    }
+
+    .laps {
+        overflow-x: auto;
+        width: 100%;
     }
 
     .lap-item {
-        min-width: 300px;
+        display: inline-block;
+        min-width: 250px;
+        padding: 5px 20px;
+    }
+}
+
+@media screen and (max-width: 435px) {
+
+    .watch .inner-watch {
+        margin-top: 30%;
+        width: 70%;
+        height: 40%;
+    }
+
+    .button-wrapper {
+        margin-top: 20%;
+    }
+
+    .minute {
+        font-size: 38px;
+    }
+
+    .sec {
+        font-size: 32px;
+    }
+
+    .milli-sec {
+        font-size: 25px;
+    }
+
+    .mybtn {
+        font-size: 15px;
+    }
+
+    .laps {
         overflow-x: auto;
+        width: 100%;
+    }
+
+    .lap-item {
+        display: inline-block;
+        min-width: 200px;
+        padding: 2px 20px;
     }
 }
