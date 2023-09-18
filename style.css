@@ -225,6 +225,10 @@ nav .navbar-brand:hover {
         margin-top: 20%;
     }
 
+    .button-wrapper .mybtn {
+        padding: 0px 15px;
+    }
+
     .minute {
         font-size: 38px;
     }
