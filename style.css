@@ -14,7 +14,7 @@ body {
     background-size: cover;
 }
 
-.container {}
+/* Heading */
 
 nav {
     width: 100%;
@@ -27,7 +27,7 @@ nav .navbar-brand {
     margin: 0 auto;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: rgb(228, 218, 218);
-    text-shadow: 2px 2px #7efeaf;
+    text-shadow: 2px 2px #ef7110;
 }
 
 nav .navbar-brand:hover {
@@ -35,18 +35,18 @@ nav .navbar-brand:hover {
     color: rgb(133, 161, 255);
 }
 
-.watch {
+/* Main */
+
+.watch-container {
     width: 100%;
     height: 50vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-
 }
 
-.watch .inner-watch {
-
+.watch-container .watch {
     margin-top: 50px;
     width: 50%;
     height: 80%;
@@ -71,7 +71,6 @@ nav .navbar-brand:hover {
     font-weight: 700;
     color: rgb(106, 236, 236);
     text-shadow: 2px 2px 5px red;
-
 }
 
 .sec {
@@ -89,6 +88,8 @@ nav .navbar-brand:hover {
     color: rgb(208, 30, 227);
     text-shadow: 2px 2px 5px red;
 }
+
+/* Buttons */
 
 .button-wrapper {
     display: flex;
@@ -117,6 +118,8 @@ nav .navbar-brand:hover {
     color: rgb(79, 4, 86);
 }
 
+/* Laps */
+
 .laps {
     margin: 20px 0;
     list-style: none;
@@ -144,7 +147,6 @@ nav .navbar-brand:hover {
     vertical-align: top;
 }
 
-
 .number {
     color: rgb(251, 251, 251);
     font-size: 20px;
@@ -171,10 +173,11 @@ nav .navbar-brand:hover {
     visibility: hidden;
 }
 
+/* Responsive */
 
 @media (min-width: 435px) and (max-width: 770px) {
 
-    .watch .inner-watch {
+    .watch-container .watch {
         margin-top: 30%;
         width: 80%;
         height: 40%;
@@ -215,7 +218,7 @@ nav .navbar-brand:hover {
 
 @media screen and (max-width: 435px) {
 
-    .watch .inner-watch {
+    .watch-container .watch {
         margin-top: 30%;
         width: 70%;
         height: 40%;
